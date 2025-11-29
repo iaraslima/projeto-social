@@ -8,7 +8,7 @@ import tutorialIcon from "../../assets/video.png";
 
 import styles from "./Home.module.css";
 
-export default function Home() {
+export default function Home({ onNavigateToBiblia }) {
   return (
     <div className={styles.container}>
       <Header />
@@ -16,7 +16,7 @@ export default function Home() {
       <h1 className={styles.title}>Bem Vindo</h1>
 
       <div className={styles.row}>
-        <CardMenu icon={bibleIcon} label="Bíblia" />
+        <CardMenu icon={bibleIcon} label="Bíblia" onClick={onNavigateToBiblia} />
         <CardMenu icon={gamesIcon} label="Jogos" />
       
       </div>
