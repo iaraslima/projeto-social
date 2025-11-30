@@ -10,7 +10,7 @@ import styles from "./Home.module.css";
 
 export default function Home({ onNavigateToBiblia }) {
   return (
-    <div className={styles.container}>
+    <div>
       <Header />
 
       <h1 className={styles.title}>Bem Vindo</h1>

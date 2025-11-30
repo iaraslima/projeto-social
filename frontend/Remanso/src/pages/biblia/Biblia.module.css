@@ -134,3 +134,66 @@
   opacity: 0.8;
 }
 
+@media (max-width: 420px) {
+
+  .verseTitle {
+    font-size: 18px;
+  }
+
+  .verseText {
+    font-size: 18px;
+  }
+
+  .verseReference {
+    font-size: 16px;
+  }
+
+  .testamentButton {
+    font-size: 20px;
+    min-height: 120px;
+    padding: 20px;
+  }
+
+  .backButton {
+    font-size: 20px;
+  }
+}
+
+
+@media (max-width: 350px) {
+  .verseCard {
+    padding: 15px;
+  }
+
+  .verseTitle {
+    font-size: 16px;
+  }
+
+  .verseText {
+    font-size: 16px;
+  }
+
+  .testamentButton {
+    font-size: 18px;
+    min-height: 110px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 700px;
+  }
+
+  .verseTitle {
+    font-size: 22px;
+  }
+
+  .verseText {
+    font-size: 24px;
+  }
+
+  .testamentButton {
+    font-size: 28px;
+    min-height: 170px;
+  }
+}
