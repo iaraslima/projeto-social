@@ -42,8 +42,10 @@ export const getLivrosPorTestamentoController = async (req, res) => {
 
 export const getCapitulosPorLivroController = async (req, res) => {
   try {
-    const { livro } = req.params;
+    const { livro } = req.params; 
     
+    console.log(`[BACKEND LOG] Requisição de capítulos recebida para ID: ${livro}`);
+
     if (!livro) {
       return res.status(400).json({
         error: 'Livro não informado',
@@ -52,9 +54,20 @@ export const getCapitulosPorLivroController = async (req, res) => {
     }
 
     const dados = await getCapitulosPorLivro(livro);
+    
+    if (!dados) {
+      console.warn(`[BACKEND LOG] Dados não encontrados para o livro ID: ${livro}. Retornando 404.`);
+      return res.status(404).json({
+        error: 'Livro ou capítulos não encontrados',
+        message: `Não foram encontrados dados de capítulos para o ID "${livro}".`
+      });
+    }
+
+    console.log(`[BACKEND LOG] Sucesso! ${dados.nome} encontrado.`); 
     res.json(dados);
+    
   } catch (error) {
-    console.error('Erro ao buscar capítulos:', error);
+    console.error('Erro ao buscar capítulos (CATCH):', error);
     res.status(500).json({
       error: 'Erro ao buscar capítulos',
       message: error.message
@@ -82,6 +95,14 @@ export const getVersiculosPorCapituloController = async (req, res) => {
     }
 
     const dados = await getVersiculosPorCapitulo(livro, numeroCapitulo);
+    
+    if (!dados) {
+      return res.status(404).json({
+          error: 'Versículos não encontrados',
+          message: `Nenhum versículo encontrado para o livro ${livro} e capítulo ${numeroCapitulo}.`
+      });
+    }
+
     res.json(dados);
   } catch (error) {
     console.error('Erro ao buscar versículos:', error);
@@ -91,4 +112,3 @@ export const getVersiculosPorCapituloController = async (req, res) => {
     });
   }
 };
-
