@@ -1,7 +1,7 @@
 import Header from "../../components/Header/Header";
 import styles from "./Biblia.module.css";
 
-export default function Biblia({ onBack }) {
+export default function Biblia({ onBack, onNavigateToAntigoTestamento }) {
   return (
     <div className={styles.container}>
       <Header />
@@ -21,7 +21,7 @@ export default function Biblia({ onBack }) {
         </div>
       </div>
 
-      <button className={styles.testamentButton}>Antigo testamento</button>
+      <button className={styles.testamentButton} onClick={onNavigateToAntigoTestamento}>Antigo testamento</button>
       <button className={styles.testamentButton}>Novo testamento</button>
 
       <div className={styles.navigationBar}>
