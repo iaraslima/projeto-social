@@ -1,0 +1,128 @@
+.containerTela {
+    background-color: #dedede;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 70px;
+}
+
+.headerApp { 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.conteudoPrincipal { 
+    flex-grow: 1;
+    padding: 0 10px;
+}
+
+.tituloLivro {
+    font-size: 1.8rem; 
+    font-weight: bold;
+    color: #333; 
+    padding: 10px 15px 0;
+}
+
+.gridCapitulos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 15px; 
+    padding: 20px 15px;
+}
+
+.botaoCapitulo {
+    background-color: #1a237e; 
+    color: white;
+    font-size: 6rem; 
+    font-weight: bold;
+    border: none;
+    padding: 12px 0;
+    aspect-ratio: 1 / 1;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.botaoCapitulo:hover {
+    background-color: #2c387e; 
+}
+
+.barraInferiorNav { 
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #a14532; 
+    height: 70px;
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.botaoVoltar { 
+    background: none;
+    border: none;
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: opacity 0.2s;
+    height: 100%;
+}
+
+.botaoVoltar:active {
+    opacity: 0.7;
+}
+
+.iconeVoltar { 
+    font-size: 2rem;
+    line-height: 1; 
+}
+
+.iconeHomePlaceholder { 
+    width: 0; 
+    height: 0;
+    overflow: hidden;
+}
+
+@media (max-width: 350px) {
+    .gridCapitulos {
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 10px;
+    }
+}
+
+@media (min-width: 768px) {
+    .gridCapitulos {
+        grid-template-columns: repeat(6, 1fr); 
+        padding: 40px;
+    }
+
+    .tituloLivro {
+        font-size: 2.5rem; 
+    }
+}
